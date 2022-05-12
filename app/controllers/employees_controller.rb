@@ -19,6 +19,9 @@ class EmployeesController < ApplicationController
   def edit
   end
 
+  def home
+  end
+  
   # POST /employees or /employees.json
   def create
     @employee = Employee.new(employee_params)

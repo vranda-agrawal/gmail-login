@@ -7,12 +7,12 @@ class SessionsController < ApplicationController
             u.email = auth[:info][:email]
             u.name =auth[:info][:name]
             u.uid = auth[:uid]
-            u.provider = SecureRandom.hex(10)
+            u.provider = SecureRandom.hex(5)
         end
 
         if @user.valid?
             session[:user_id]=@user.id
-            redirect_to photos_path
+            redirect_to home_path
         else
             flash[:message] ="Credential error"
             redirect_to login_path
